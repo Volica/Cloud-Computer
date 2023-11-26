@@ -57,7 +57,45 @@ describe('Number of Islands', function () {
     assert.strictEqual(numberOfIslands, 10);
   });
 
+  //测试用例6
+  it('should return 1 for grid with one island', function () {
+    const grid = [
+      ['1', '1', '1', '1'],
+      ['1', '1', '1', '0'],
+      ['1', '1', '0', '0'],
+      ['1', '0', '0', '0']
+    ];
+    const solution = new Solution();
+    const numberOfIslands = solution.numIslands(grid);
+    assert.strictEqual(numberOfIslands, 1);
+  });
+
+  //测试用例7
+  it('should return the correct number of islands in a grid', function () {
+    const grid = [
+      ['1', '0', '0', '1'],
+      ['0', '1', '1', '0'],
+      ['0', '1', '1', '0'],
+      ['1', '0', '0', '1']
+    ];
+    const solution = new Solution();
+    const numberOfIslands = solution.numIslands(grid);
+    assert.strictEqual(numberOfIslands, 5);
+  });
+  
+  //测试用例8
+  it('should return the correct number of islands in a grid', function () {
+    const grid = [
+      ['1', '1', '0', '0'],
+      ['1', '1', '0', '0'],
+      ['0', '0', '1', '1'],
+      ['0', '0', '1', '1']
+    ];
+    const solution = new Solution();
+    const numberOfIslands = solution.numIslands(grid);
+    assert.strictEqual(numberOfIslands, 2);
+
   // 添加更多的测试用例
+  });
+
 });
-
-

@@ -1,0 +1,31 @@
+name: Island test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+    - name: check
+      uses: actions/checkout@v2
+
+    - name: Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: install
+      run: |
+        npm install --save-dev mocha
+        npm install -g mocha
+    
+
+    - name: test
+      run: mocha test/test.js
